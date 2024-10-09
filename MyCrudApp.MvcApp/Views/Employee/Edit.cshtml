@@ -1,0 +1,56 @@
+@model Employee
+
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+<h1>Edit Employee</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Salary" class="form-label"></label>
+                <input asp-for="Salary" class="form-control" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Current Profile Photo</label><br />
+                @if (!string.IsNullOrEmpty(Model.ProfilePhotoPath))
+                {
+                    <img src="@Model.ProfilePhotoPath" alt="Profile Photo" class="img-thumbnail mb-2" width="100"
+                        height="100" />
+                }
+                else
+                {
+                    <span>No Image</span>
+                }
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="ProfilePhotoPath" class="form-label">Change Profile Photo</label>
+                <input type="file" name="ProfilePhoto" class="form-control" accept="image/*" />
+                <span asp-validation-for="ProfilePhotoPath" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

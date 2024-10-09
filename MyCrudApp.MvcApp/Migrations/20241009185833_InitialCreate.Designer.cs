@@ -10,7 +10,7 @@ using MyCrudApp.MvcApp;
 namespace MyCrudApp.MvcApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241008155542_InitialCreate")]
+    [Migration("20241009185833_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -26,9 +26,14 @@ namespace MyCrudApp.MvcApp.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Salary")
+                    b.Property<string>("ProfilePhotoPath")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Salary")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

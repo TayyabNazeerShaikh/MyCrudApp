@@ -23,9 +23,14 @@ namespace MyCrudApp.MvcApp.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Salary")
+                    b.Property<string>("ProfilePhotoPath")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Salary")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

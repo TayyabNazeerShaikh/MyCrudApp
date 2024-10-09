@@ -1,0 +1,36 @@
+@model Employee
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<h1>Employee Details</h1>
+
+<div class="card">
+
+    <div class="card-header">
+        @Model.Name
+    </div>
+
+    <div class="card-body">
+
+        <p><strong>Salary:</strong> @Model.Salary</p>
+
+        @if (!string.IsNullOrEmpty(Model.ProfilePhotoPath))
+        {
+            <p><strong>Profile Photo:</strong></p>
+            <img src="@Model.ProfilePhotoPath" alt="Profile Photo" class="img-fluid" style="max-width: 200px;" />
+        }
+        else
+        {
+            <p><strong>Profile Photo:</strong> No Image</p>
+        }
+
+    </div>
+
+</div>
+
+<p>
+    <a href="@Url.Action("Edit", new { id = Model.Id })" class="btn btn-warning">Edit</a>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Back to List</a>
+</p>

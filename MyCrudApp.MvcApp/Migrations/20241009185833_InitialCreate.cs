@@ -16,8 +16,9 @@ namespace MyCrudApp.MvcApp.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: true),
-                    Salary = table.Column<string>(type: "TEXT", nullable: true)
+                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Salary = table.Column<decimal>(type: "TEXT", nullable: false),
+                    ProfilePhotoPath = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

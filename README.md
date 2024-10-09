@@ -1,3 +1,8 @@
+![alt text](https://github.com/TayyabNazeerShaikh/MyCrudApp/blob/master/Doc/a.png)
+![alt text](https://github.com/TayyabNazeerShaikh/MyCrudApp/blob/master/Doc/b.png)
+![alt text](https://github.com/TayyabNazeerShaikh/MyCrudApp/blob/master/Doc/c.png)
+![alt text](https://github.com/TayyabNazeerShaikh/MyCrudApp/blob/master/Doc/d.png)
+
 1. `dotnet new sln -n MyCrudApp -o MyCrudApp`
 
 2. `cd .\MyCrudApp\`

@@ -1,37 +1,37 @@
-dotnet new sln -n MyCrudApp -o MyCrudApp
+1. `dotnet new sln -n MyCrudApp -o MyCrudApp`
 
-cd .\MyCrudApp\
+2. `cd .\MyCrudApp\`
 
-dotnet new gitignore
+3. `dotnet new gitignore`
 
-git init
+4. `git init`
 
-git add .
+5. `git add .`
 
-git commit -m "Initial commit"
+6. `git commit -m "Initial commit"`
 
-dotnet new mvc -n MyCrudApp.MvcApp --use-program-main
+7. `dotnet new mvc -n MyCrudApp.MvcApp --use-program-main`
 
-dotnet sln MyCrudApp.sln add .\MyCrudApp.MvcApp\MyCrudApp.MvcApp.csproj
+8. `dotnet sln MyCrudApp.sln add .\MyCrudApp.MvcApp\MyCrudApp.MvcApp.csproj`
 
-dotnet build
+9. `dotnet build`
 
-cd .\MyCrudApp.MvcApp\
+10. `cd .\MyCrudApp.MvcApp\`
 
-dotnet add package Microsoft.EntityFrameworkCore.Sqlite   
+11. `dotnet add package Microsoft.EntityFrameworkCore.Sqlite`
 
-dotnet add package Microsoft.EntityFrameworkCore.Relational
+12. `dotnet add package Microsoft.EntityFrameworkCore.Relational`
 
-dotnet add package Microsoft.EntityFrameworkCore.Design 
+13. `dotnet add package Microsoft.EntityFrameworkCore.Design`
 
-dotnet add package Microsoft.EntityFrameworkCore.Tools     
+14. `dotnet add package Microsoft.EntityFrameworkCore.Tools`
 
-dotnet add package Microsoft.EntityFrameworkCore 
+15. `dotnet add package Microsoft.EntityFrameworkCore`
 
-dotnet tool install --global dotnet-ef
+16. `dotnet tool install --global dotnet-ef`
 
-dotnet ef migrations add InitialCreate
+17. `dotnet ef migrations add InitialCreate`
 
-dotnet ef database update
+18. `dotnet ef database update`
 
-dotnet run
+19. `dotnet run`
